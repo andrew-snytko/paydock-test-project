@@ -1,0 +1,22 @@
+<div data-ng-controller="ProductsController as productsCtrl">
+    <div class="product" data-ng-repeat="product in productsCtrl.productsList">
+        <div>
+            <img data-ng-src="{{product.image}}" alt="Product Image">
+
+        </div>
+        <div class="main-info">
+            <p>
+                <b>{{product.title}}</b>
+            </p>
+            <p>
+                Description: <b>{{product.desc}}</b>
+            </p>
+            <p>
+                Amount: <b>{{product.amount}}</b>
+            </p>
+        </div>
+        <div class="cost">
+            {{product.cost}}$
+        </div>
+    </div>
+</div>

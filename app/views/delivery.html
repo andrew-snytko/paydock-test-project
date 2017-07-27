@@ -1,0 +1,17 @@
+<div data-ng-controller="DeliveryController as deliveryCtrl">
+    <form name="delivery-form" class="delivery-form">
+        <div>
+            <p>Country</p>
+            <input type="text" id="country" data-ng-model="deliveryCtrl.deliveryData.country">
+        </div>
+        <div>
+            <p>City</p>
+            <input type="text" id="city" data-ng-model="deliveryCtrl.deliveryData.city">
+        </div>
+        <div>
+            <p>Address</p>
+            <input type="text" id="address" data-ng-model="deliveryCtrl.deliveryData.address">
+        </div>
+        <button type="button" class="btn btn-primary btn-next" data-ng-click="deliveryCtrl.next()">Next</button>
+    </form>
+</div>

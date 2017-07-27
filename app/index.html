@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html data-ng-app="mainApp">
+    <head>
+        <!-- build:css styles/main.css -->
+        <link rel="stylesheet" href="styles/main.scss">
+        <!-- endbuild -->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.min.css" />
+    </head>
+    <body>
+        <div class="page-wrapper" data-ng-controller="MainController as mainCtrl">
+            <div class="products-wrapper" data-ng-include="'views/products.html'"></div>
+            <div class="tabs-wrapper">
+                <div class="tab-header">
+                    <div data-ng-click="mainCtrl.setCurrentStep('delivery')" class="tab"
+                        data-ng-class="{'active-tab': mainCtrl.currentStep === 'delivery'}">DELIVERY</div>
+                    <div data-ng-click="mainCtrl.setCurrentStep('payment')" class="tab"
+                        data-ng-class="{'active-tab': mainCtrl.currentStep === 'payment'}">PAYMENT INFORMATION</div>
+                    <div data-ng-click="mainCtrl.setCurrentStep('summary')" class="tab"
+                        data-ng-class="{'active-tab': mainCtrl.currentStep === 'summary'}">DETAILS</div>
+                </div>
+                <div class="products-total-cost">
+                    <span>Total: {{mainCtrl.productsTotalCost}}$</span>
+                </div>
+            </div>
+            <div class="tab-container">
+                <div data-ng-if="mainCtrl.currentStep === 'delivery'" data-ng-include="'views/delivery.html'"></div>
+                <div data-ng-if="mainCtrl.currentStep === 'payment'" data-ng-include="'views/payment.html'"></div>
+                <div data-ng-if="mainCtrl.currentStep === 'summary'" data-ng-include="'views/summary.html'"></div>
+            </div>
+        </div>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+        <script src="https://app-sandbox.paydock.com/v1/widget.umd.js" ></script>
+        <!-- build:js app.js -->
+        <script src="app.js"></script>
+        <script src="config.js"></script>
+        <script src="scripts/controllers/main.controller.js"></script>
+        <script src="scripts/controllers/products.controller.js"></script>
+        <script src="scripts/controllers/delivery.controller.js"></script>
+        <script src="scripts/controllers/payment.controller.js"></script>
+        <script src="scripts/controllers/summary.controller.js"></script>
+        <script src="scripts/services/steps-data.service.js"></script>
+        <script src="scripts/services/products-data.service.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>

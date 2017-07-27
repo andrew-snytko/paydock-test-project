@@ -1,0 +1,15 @@
+<div data-ng-controller="SummaryController as summaryCtrl">
+    <div>
+        <p>Payment information</p>
+        <p class="summary-info">{{summaryCtrl.paymentData.cardScheme}} {{summaryCtrl.paymentData.cardNumber}}</p>
+    </div>
+    <div class="delivery-data-container">
+        <p>Delivery</p>
+        <div class="summary-info">
+            <p>Country: {{summaryCtrl.deliveryData.country || '-'}}</p>
+            <p>City: {{summaryCtrl.deliveryData.city || '-'}}</p>
+            <p>Address: {{summaryCtrl.deliveryData.address || '-'}}</p>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary btn-next">Buy</button>
+</div>

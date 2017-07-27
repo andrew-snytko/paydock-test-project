@@ -1,0 +1,20 @@
+{
+  "name": "paydock-angularjs-task",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "postinstall": "bower cache clean && bower install"
+  },
+  "author": "Andrew Snytko",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-bower-task": "^0.5.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-sass": "^2.0.0",
+    "grunt-usemin": "^3.1.1",
+    "load-grunt-tasks": "^3.5.2"
+  }
+}
